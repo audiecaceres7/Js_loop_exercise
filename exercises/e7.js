@@ -5,8 +5,23 @@
 
 export function getClientWithLeastBalance(array) {
   // Your code goes here...
+    let minBalance = [];
+    for (let i = 0; i < array.length; i++) {
+      if (array[i].balance !== 0) {
+        minBalance.push(array[i].balance);
+      };
+    };
+    
+    let object = [];
+    let minValue = Math.min(...minBalance);
 
-}
+    for (let i = 0; i < array.length; i++) {
+      if (array[i].balance === minValue) {
+        object.push(array[i]);
+      };
+    };
+    return object
+};
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-7"

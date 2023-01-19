@@ -4,8 +4,15 @@
 
 export function getNumbersWithSquareRoots(max) {
   // Your code goes here...
-
-}
+  let array = [];
+  for (let i = 0; i <= max; i++) {
+    let square = i * i;
+    if (square < max) {
+      array.push(square);
+    };
+  };
+  return array;
+};
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-2"

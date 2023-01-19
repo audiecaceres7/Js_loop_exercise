@@ -5,9 +5,18 @@
 // separateNamesWithAFromRest(["jon", "alice", "andrew", "mark", "jimmy"]) -> [["alice", "andrew", "mark"], ["jon", "jimmy"]]
 
 export function separateNamesWithAFromRest(array) {
-  // Your code goes here...
-
-}
+  // Your code goes here...s
+  let namesWithA = [];
+  let namesWithoutA = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].includes('a')) {
+      namesWithA.push(array[i]);
+    } else {
+      namesWithoutA.push(array[i]);
+    };
+  };
+  return [namesWithA, namesWithoutA];
+};
 
 
 // === TEST YOURSELF ===
