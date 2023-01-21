@@ -9,17 +9,13 @@ export function getAllAccountsWithSumsOfDepositsLess2000(array) {
   let object = [];
     for (let i = 0; i < array.length; i++) {
       const exists = array[i].deposits ?? 0;
-      if (sum(exists) < 2000) {
-        object.push(array[i]);
-      };
-    };
-
-    function sum(array) {
       let total = 0;
-      for (let i in array) {
-        total += array[i]
-      };
-      return total;
+        for (let j in exists) {
+          total += exists[j];
+        }
+      if (total < 2000) {
+        object.push(array[i]);
+      }
     };
   return object;
 };

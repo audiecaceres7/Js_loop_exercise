@@ -4,17 +4,21 @@
 // (1 - an array of names that contain "a" in name, 2 - an array of names that don't have 'a' in name)
 // separateNamesWithAFromRest(["jon", "alice", "andrew", "mark", "jimmy"]) -> [["alice", "andrew", "mark"], ["jon", "jimmy"]]
 
+
 export function separateNamesWithAFromRest(array) {
   // Your code goes here...s
   let namesWithA = [];
   let namesWithoutA = [];
-  for (let i = 0; i < array.length; i++) {
-    if (array[i].includes('a')) {
-      namesWithA.push(array[i]);
-    } else {
-      namesWithoutA.push(array[i]);
+    for (let i = 0; i < array.length; i++) {
+      const names = array[i];
+        for (let j = 0; j < names.length; j++) {
+          if (names[j] === 'a') {
+            namesWithA.push(names);
+          } else {
+            namesWithoutA.push(names);
+          }
+        }
     };
-  };
   return [namesWithA, namesWithoutA];
 };
 

@@ -8,17 +8,12 @@ export function getAllWithdrawals(array) {
   let sum = [];
     for (let i = 0; i < array.length; i++) {
       const exists = array[i].withdrawals ?? 0;
-        sum.push(totalValue(exists));
+      let total = 0;
+        for (let j in exists) {
+          total += exists[j];
+        }
+      sum.push(total);
     };
-
-    function totalValue(arr) {
-      let total = 0
-      for (let i in arr) {
-        total += arr[i];
-      };
-      return total
-    };
-    
   return sum;
 };
 

@@ -8,17 +8,24 @@ export function getClientWithGreatestBalance(array) {
   // Your code goes here...
   let max = [];
   let object = [];
+ 
     for (let i = 0; i < array.length; i++) {
       max.push(array[i].balance)
     };
-    
-    const maxValue = Math.max(...max);
+
+    let value = max[0];
+    for (let i = 0; i < max.length; i++) {
+      if (value < max[i]) {
+        value = max[i]
+      }
+    }
     
     for (let i = 0; i < array.length; i++) {
-      if (array[i].balance === maxValue) {
+      if (array[i].balance === value) {
         object.push(array[i]);
       };
     };
+
   return object;
 };
 
