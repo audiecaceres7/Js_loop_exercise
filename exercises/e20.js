@@ -8,18 +8,21 @@
 export function separateNamesWithAFromRest(array) {
   // Your code goes here...s
   let namesWithA = [];
-  let namesWithoutA = [];
-    for (let i = 0; i < array.length; i++) {
-      const names = array[i];
-        for (let j = 0; j < names.length; j++) {
-          if (names[j] === 'a') {
-            namesWithA.push(names);
-          } else {
-            namesWithoutA.push(names);
-          }
-        }
-    };
-  return [namesWithA, namesWithoutA];
+  let namesWithOutA = [];
+
+    for (let i in array) {
+    let exist = false;
+      for (let j in array[i]) {
+        if (array[i][j] === 'a') {
+          exist = true
+          namesWithA.push(array[i]);
+        } 
+      }
+    if (!exist) {
+      namesWithOutA.push(array[i]);
+    } 
+  }
+  return [namesWithA, namesWithOutA];
 };
 
 
